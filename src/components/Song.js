@@ -10,12 +10,15 @@ const Song = (props) => {
             />
             <div className="side-data">
                 <p>
-                    <span className="title">{props.title}</span> - {" "}
+                    <span className="title">{props.title}</span> -{" "}
                     <span className="artist">{props.artist}</span>
                 </p>
             </div>
-            <div className="">
-                <audio src={`https://daflx.com/storage/${props.song}`} controls ></audio>
+            <div>
+                <audio
+                    src={`https://daflx.com/storage/${props.song}`}
+                    controls
+                ></audio>
             </div>
         </div>
     );
