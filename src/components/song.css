@@ -1,0 +1,30 @@
+.image {
+    width: 100%;
+    display: block;
+    height: 45vh;
+    border-radius: 10px;
+}
+
+.song-card {
+    padding: 15px 0;
+}
+
+.song-card:not(:last-child) {
+    border-bottom: 2px solid rgba(61, 2, 61, 0.459);
+}
+
+.side-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.artist {
+    font-size: 20px;
+    font-weight: 100;
+}

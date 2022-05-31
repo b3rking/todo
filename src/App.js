@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
+import ListSongs from "./components/ListSongs";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [songs, setSongs] = useState([]);
+
+    const fetchSongsHandler = async () => {
+        const res = await fetch('https://daflx.com/api/tracks')
+        const data = await res.json()
+        setSongs(data.data.tracks);
+    }
+
+    return (
+        <div className="App">
+            <button onClick={fetchSongsHandler}>fetch songs</button>
+            <ListSongs songs={songs}/>
+        </div>
+    );
 }
 
 export default App;
